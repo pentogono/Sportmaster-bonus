@@ -1,19 +1,21 @@
 package ru.itpark;
 
 public class CashbackService {
-    public int calculateCashBack(int ordinaryPurchase, int purchaseWithIncreasedCashBack, int purchaseSpecialOffer) {
-        int totalCashBask;
-        int ordinaryCashBackPersent = 1;
-        int increatedCashBackPercent = 5;
-        int pecisalCashBackPercent = 30;
+    public int calculateCashBack(int ordinaryPurchase, int increasedPurchase, int specialOffer) {
+        int totalCashBack;
+        int ordinaryCashBack = 1;
+        int increatedCashBack = 5;
+        int specisalCashBack = 30;
         int hundredPercent = 100;
-        int limitCashBack = 3000;
+        int limitCashBack = 3_000;
 
-        totalCashBask = ((ordinaryPurchase/ hundredPercent) * ordinaryCashBackPersent)  + ((purchaseWithIncreasedCashBack / hundredPercent)* increatedCashBackPercent)  + ((purchaseSpecialOffer  / hundredPercent)* pecisalCashBackPercent);
-        if (totalCashBask > limitCashBack) {
-            totalCashBask = limitCashBack;
+        totalCashBack = ((ordinaryPurchase / hundredPercent) * ordinaryCashBack) +
+                ((increasedPurchase / hundredPercent) * increatedCashBack) +
+                ((specialOffer / hundredPercent) * specisalCashBack);
+        if (totalCashBack > limitCashBack) {
+            totalCashBack = limitCashBack;
         }
-        return totalCashBask;
+        return totalCashBack;
 
     }
 }
