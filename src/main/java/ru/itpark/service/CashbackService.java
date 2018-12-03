@@ -1,4 +1,4 @@
-package ru.itpark;
+package ru.itpark.service;
 
 public class CashbackService {
     public int calculateCashBack(int ordinaryPurchase, int increasedPurchase, int specialOffer) {
@@ -8,9 +8,9 @@ public class CashbackService {
         int hundredPercent = 100;
         int limitCashBack = 3_000;
 
-        int totalCashBack = ((ordinaryPurchase / hundredPercent) * ordinaryCashBack) +
-                ((increasedPurchase / hundredPercent) * increasedCashBack) +
-                ((specialOffer / hundredPercent) * specialCashBack);
+        int totalCashBack = ordinaryPurchase / hundredPercent * ordinaryCashBack +
+                increasedPurchase / hundredPercent * increasedCashBack +
+                specialOffer / hundredPercent * specialCashBack;
         if (totalCashBack > limitCashBack) {
             totalCashBack = limitCashBack;
         }
